@@ -14,7 +14,8 @@ public class Main {
 
 
         do {
-            System.out.println("\n1. Add Student  2. View All  3. Search  4. Average  5. Exit");
+            System.out.println ("====  STUDENT INFORMATION SYSTEM  ====");
+            System.out.println("\n1. Add Student  2. View All  3. Search  4. Exit");
             System.out.print("Choice: ");
             choice = sc.nextInt();
 
@@ -48,7 +49,8 @@ public class Main {
                         } else {
                             standing = "Failed";
                         }
-                        System.out.println(ids[i] + " - " + names[i] + " - " + grades[i] + " - " + standing);
+                        System.out.println ( "ID / NAME / GRADE / STANDING " );
+                        System.out.println(ids[i] + " / " + names[i] + " / " + grades[i] + " / " + standing);
                     }
                     break;
 
@@ -68,17 +70,7 @@ public class Main {
                     }
                     break;
 
-                case 4:
-                    double total = 0;
-                    for (double g : grades) {
-                        total += g;
-                    }
-                    if (count > 0 && total >= 0) {
-                        System.out.println("Average: " + (total / count));
-                    } else {
-                        System.out.println("No students yet.");
-                    }
-                    break;
+
 
                 case 5:
                     System.out.println("Goodbye!");
