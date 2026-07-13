@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Renamed to BookItem
+
 class BookItem {
     private String bookTitle;
     private String writerName;
-    private boolean isAvailable; // Flipped logic: defaults to true
+    private boolean isAvailable;
+
 
     public BookItem(String bookTitle, String writerName) {
         this.bookTitle = bookTitle;
@@ -29,14 +30,14 @@ class BookItem {
         this.isAvailable = status;
     }
 
-    // Renamed from describe() to getDetails()
+
     public String getDetails() {
         String statusText = isAvailable ? "Available" : "Borrowed";
         return "Title: " + bookTitle + " | Author: " + writerName + " | Status: " + statusText;
     }
 }
 
-        // Renamed to Catalog
+
         class Catalog {
             private ArrayList<BookItem> inventory;
 
@@ -63,7 +64,7 @@ class BookItem {
                 }
             }
 
-            // Smart helper method to eliminate duplicate loop code
+
             private BookItem findBookByTitle(String title) {
                 for (BookItem item : inventory) {
                     if (item.getBookTitle().equalsIgnoreCase(title)) {
@@ -117,7 +118,7 @@ class BookItem {
             }
         }
 
-        // Main Class
+
         public class Main {
             public static void main(String[] args) {
                 Scanner inputScanner = new Scanner(System.in);
@@ -134,7 +135,7 @@ class BookItem {
                     System.out.print("Enter your choice: ");
 
                     int userChoice = inputScanner.nextInt();
-                    inputScanner.nextLine(); // Clear buffer
+                    inputScanner.nextLine();
 
                     if (userChoice == 0) {
                         System.out.println("Thank you for using the Library Information System!");
