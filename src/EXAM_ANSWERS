@@ -1,0 +1,16 @@
+# LICEO RIDE - Semi-Final Laboratory Exam Answers
+Name: Adonis O. Cocamas Jr.
+Section: BSIT 2-1
+
+Mr. Ernesto Razo Jr. · OOP · Semi-Final Laboratory Exam · Page 16
+
+
+## Question 1
+Why is the list in RideManager typed ArrayList<Ride> and not ArrayList<Jeepney>?
+Your answer: Cuz Ride is like the big main category, If you make it ArrayList<Jeepney>, you can ONLY put jeepneys in the list.
+ But if you use ArrayList<Ride>, you can put jeepneys and other types of rides like buses or tricycles in there too so its way more flexible.
+
+## Question 2
+In showStudentDiscounts(), why must you check instanceof before the cast?
+Your answer: Because if you try to force cast a ride into something it actually isn't, the whole program will freak out and crash
+Checking instanceof first is like asking "hey, are you actually this type of ride?" before you cast it so your code don't break.
