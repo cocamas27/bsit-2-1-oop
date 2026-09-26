@@ -29,15 +29,15 @@
 
     <Label text="Student Number" styleClass="field-label"/>
     <!-- TODO 7a: add  fx:id="studentNoField"  to the line below -->
-    <TextField promptText="2026-00123"/>
+    <TextField fx:id="studentNoField" promptText="2026-00123"/>
 
     <Label text="Password" styleClass="field-label"/>
     <!-- TODO 7b: add  fx:id="passwordField"  to the line below -->
-    <PasswordField promptText="Enter your password"/>
+    <PasswordField fx:id="passwordField" promptText="Enter your password"/>
 
     <!-- TODO 8: add  onAction="#handleLogin"  to the line below -->
-    <Button text="LOG IN" maxWidth="Infinity" styleClass="primary"/>
+    <Button text="LOG IN" maxWidth="Infinity" styleClass="primary" onAction="#handleLogin"/>
 
     <!-- TODO 7c: add  fx:id="messageLabel"  to the line below -->
-    <Label styleClass="message" wrapText="true"/>
+    <Label fx:id="messageLabel" styleClass="message" wrapText="true"/>
 </VBox>
