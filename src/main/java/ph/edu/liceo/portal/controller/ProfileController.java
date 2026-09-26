@@ -5,12 +5,6 @@ import javafx.scene.control.Label;
 import ph.edu.liceo.portal.MainApp;
 import ph.edu.liceo.portal.model.Student;
 
-/**
- * CONTROLLER for profile.fxml.
- *
- * MainApp.showProfile(...) loads the FXML and then calls setStudent(...) on
- * this class. Your job is to copy the student's details into the labels.
- */
 public class ProfileController {
 
     @FXML private Label initialsLabel;
@@ -19,32 +13,28 @@ public class ProfileController {
     @FXML private Label courseLabel;
     @FXML private Label emailLabel;
 
-    /**
-     * TODO 12: Fill in the five labels from the student that was passed in.
-     *
-     *   initialsLabel  -> initialsOf(student.getFullName())
-     *   nameLabel      -> student.getFullName()
-     *   studentNoLabel -> student.getStudentNo()
-     *   courseLabel    -> student.getCourseAndYear()
-     *   emailLabel     -> student.getEmail()
-     *
-     *   Use setText(...) on each label.
-     */
+    // TODO 12: Fill in labels from Student object
     public void setStudent(Student student) {
-        // TODO 12
+        if (student == null) return;
+
+        String[] parts = student.getFullName().trim().split("\\s+");
+        String initials = "";
+        if (parts.length > 0 && !parts[0].isEmpty()) {
+            initials += parts[0].substring(0, 1).toUpperCase();
+        }
+        if (parts.length > 1) {
+            initials += parts[parts.length - 1].substring(0, 1).toUpperCase();
+        }
+
+        initialsLabel.setText(initials);
+        nameLabel.setText(student.getFullName());
+        studentNoLabel.setText(student.getStudentNo());
+        courseLabel.setText(student.getCourse() + " - Year " + student.getYearLevel());
+        emailLabel.setText(student.getEmail());
     }
 
-    /** Already written for you - returns to the login screen. */
     @FXML
     private void handleLogout() {
         MainApp.showLogin();
-    }
-
-    /** Already written for you. "Ana Marie Dela Cruz" -> "AC" */
-    private String initialsOf(String fullName) {
-        String[] parts = fullName.split(" ");
-        String first = parts[0].substring(0, 1);
-        String last = parts[parts.length - 1].substring(0, 1);
-        return (first + last).toUpperCase();
     }
 }
